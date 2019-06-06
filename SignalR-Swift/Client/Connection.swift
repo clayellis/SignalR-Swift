@@ -325,8 +325,13 @@ public class Connection: ConnectionProtocol {
         shouldReconnect = false
         disconnected = false
 
-        guard let json = try? JSONSerialization.jsonObject(with: response),
-            let message = ReceivedMessage(jsonObject: json) else { return }
+        guard let json = try? JSONSerialization.jsonObject(with: response) else {
+            return
+        }
+
+        guard let message = ReceivedMessage(jsonObject: json) else {
+            return
+        }
         
         if message.result != nil {
             self.didReceiveData(data: json)
