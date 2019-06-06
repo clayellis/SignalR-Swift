@@ -14,7 +14,7 @@ target 'SignalRSwift' do
     # Pods for testing
     pod 'Quick'
     pod 'Nimble'
-    pod 'Mockit', '~> 1.3'
+    pod 'Mockit', '~> 1.4.0'
   end
 
 end
